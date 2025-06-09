@@ -35,6 +35,216 @@
           "x": 0,
           "y": 0
         },
+        "id": 7,
+        "panels": [],
+        "title": "Networking",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "deof1yw2v2olcb"
+        },
+        "description": "Requests routed by nimbus (public-facing proxy server)",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": 0
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "reqps"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 9,
+          "x": 0,
+          "y": 1
+        },
+        "id": 9,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "12.1.0-244117",
+        "targets": [
+          {
+            "disableTextWrap": false,
+            "editorMode": "builder",
+            "expr": "rate(caddy_http_requests_total[1m])",
+            "fullMetaSearch": false,
+            "includeNullMetadata": true,
+            "legendFormat": "{{host}}",
+            "range": true,
+            "refId": "Requests per Second",
+            "useBackend": false
+          }
+        ],
+        "title": "Requests per Second",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "deof1yw2v2olcb"
+        },
+        "description": "Auto-banned IP addresses (e.g. port scanning, malicious crawling, suspicious probing)",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 25,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "normal"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": 0
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 8,
+          "x": 9,
+          "y": 1
+        },
+        "id": 8,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "hidden",
+            "placement": "right",
+            "showLegend": false
+          },
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "12.1.0-244117",
+        "targets": [
+          {
+            "disableTextWrap": false,
+            "editorMode": "builder",
+            "expr": "cs_active_decisions{origin=\"crowdsec\"}",
+            "fullMetaSearch": false,
+            "includeNullMetadata": true,
+            "legendFormat": "{{reason}}",
+            "range": true,
+            "refId": "Decisions",
+            "useBackend": false
+          }
+        ],
+        "title": "Crowdsec Active Decisions",
+        "type": "timeseries"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 9
+        },
         "id": 6,
         "panels": [],
         "title": "Power",
@@ -114,7 +324,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 1
+          "y": 10
         },
         "id": 1,
         "options": {
@@ -226,7 +436,7 @@
           "h": 8,
           "w": 5,
           "x": 12,
-          "y": 1
+          "y": 10
         },
         "id": 2,
         "options": {
@@ -335,7 +545,7 @@
           "h": 8,
           "w": 8,
           "x": 0,
-          "y": 9
+          "y": 18
         },
         "id": 3,
         "options": {
@@ -426,7 +636,7 @@
           "h": 8,
           "w": 4,
           "x": 8,
-          "y": 9
+          "y": 18
         },
         "id": 5,
         "options": {
@@ -502,7 +712,7 @@
           "h": 8,
           "w": 5,
           "x": 12,
-          "y": 9
+          "y": 18
         },
         "id": 4,
         "options": {
@@ -547,7 +757,7 @@
       "list": []
     },
     "time": {
-      "from": "now-24h",
+      "from": "now-5m",
       "to": "now"
     },
     "timepicker": {},
