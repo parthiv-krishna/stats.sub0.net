@@ -1109,7 +1109,7 @@
         },
         "gridPos": {
           "h": 4,
-          "w": 8,
+          "w": 6,
           "x": 0,
           "y": 51
         },
@@ -1137,7 +1137,7 @@
             "disableTextWrap": false,
             "editorMode": "builder",
             "exemplar": false,
-            "expr": "node_filesystem_free_bytes{mountpoint=\"/array/merge/cache\"}",
+            "expr": "node_filesystem_free_bytes{mountpoint=\"/persist\", instance=\"prometheus-node.midnight.ts.sub0.net\"}",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "instant": false,
@@ -1168,90 +1168,15 @@
                 },
                 {
                   "color": "orange",
-                  "value": 500000000000
-                },
-                {
-                  "color": "yellow",
-                  "value": 1000000000000
-                },
-                {
-                  "color": "green",
-                  "value": 2000000000000
-                }
-              ]
-            },
-            "unit": "decbytes"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 4,
-          "w": 2,
-          "x": 8,
-          "y": 51
-        },
-        "id": 17,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "percentChangeColorMode": "standard",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
-        },
-        "pluginVersion": "12.1.0-244117",
-        "targets": [
-          {
-            "disableTextWrap": false,
-            "editorMode": "builder",
-            "expr": "node_filesystem_free_bytes{mountpoint=\"/array/disk/cache\"}",
-            "fullMetaSearch": false,
-            "includeNullMetadata": true,
-            "legendFormat": "Free Space",
-            "range": true,
-            "refId": "cache",
-            "useBackend": false
-          }
-        ],
-        "title": "SSD Cache",
-        "type": "stat"
-      },
-      {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "deof1yw2v2olcb"
-        },
-        "description": "Space available on SSD cache (4TB fast storage)",
-        "fieldConfig": {
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "red",
-                  "value": 0
-                },
-                {
-                  "color": "orange",
-                  "value": 20000000000
-                },
-                {
-                  "color": "yellow",
                   "value": 50000000000
                 },
                 {
+                  "color": "yellow",
+                  "value": 150000000000
+                },
+                {
                   "color": "green",
-                  "value": 70000000000
+                  "value": 350000000000
                 }
               ]
             },
@@ -1261,8 +1186,8 @@
         },
         "gridPos": {
           "h": 4,
-          "w": 2,
-          "x": 11,
+          "w": 6,
+          "x": 6,
           "y": 51
         },
         "id": 19,
@@ -1288,7 +1213,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "builder",
-            "expr": "node_filesystem_free_bytes{instance=\"prometheus-node.midnight.ts.sub0.net\", mountpoint=\"/persist\"}",
+            "expr": "node_filesystem_free_bytes{instance=\"prometheus-node.midnight.ts.sub0.net\", mountpoint=\"/\"}",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "legendFormat": "__auto",
@@ -1301,317 +1226,329 @@
         "type": "stat"
       },
       {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "deof1yw2v2olcb"
-        },
-        "description": "Total space available on HDD array (two 14TB data disks + one 14TB parity disk for data integrity)",
-        "fieldConfig": {
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "red",
-                  "value": 0
-                },
-                {
-                  "color": "orange",
-                  "value": 5000000000000
-                },
-                {
-                  "color": "yellow",
-                  "value": 10000000000000
-                },
-                {
-                  "color": "green",
-                  "value": 20000000000000
-                }
-              ]
-            },
-            "unit": "decbytes"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 4,
-          "w": 6,
-          "x": 0,
-          "y": 55
-        },
-        "id": 10,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "percentChangeColorMode": "standard",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
-        },
-        "pluginVersion": "12.1.0-244117",
-        "targets": [
-          {
-            "disableTextWrap": false,
-            "editorMode": "builder",
-            "expr": "node_filesystem_free_bytes{mountpoint=\"/array/merge/base\"}",
-            "fullMetaSearch": false,
-            "includeNullMetadata": true,
-            "legendFormat": "Free Space",
-            "range": true,
-            "refId": "base",
-            "useBackend": false
-          }
-        ],
-        "title": "HDD Array",
-        "type": "stat"
-      },
-      {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "deof1yw2v2olcb"
-        },
-        "description": "Total space available on data0 hard drive ",
-        "fieldConfig": {
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "red",
-                  "value": 0
-                },
-                {
-                  "color": "orange",
-                  "value": 2500000000000
-                },
-                {
-                  "color": "yellow",
-                  "value": 5000000000000
-                },
-                {
-                  "color": "green",
-                  "value": 10000000000000
-                }
-              ]
-            },
-            "unit": "decbytes"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 4,
-          "w": 2,
-          "x": 0,
-          "y": 59
-        },
-        "id": 14,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "percentChangeColorMode": "standard",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
-        },
-        "pluginVersion": "12.1.0-244117",
-        "targets": [
-          {
-            "disableTextWrap": false,
-            "editorMode": "builder",
-            "expr": "node_filesystem_free_bytes{device=\"/dev/sdc1\"}",
-            "fullMetaSearch": false,
-            "includeNullMetadata": true,
-            "legendFormat": "Free Space",
-            "range": true,
-            "refId": "data0",
-            "useBackend": false
-          }
-        ],
-        "title": "data0",
-        "type": "stat"
-      },
-      {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "deof1yw2v2olcb"
-        },
-        "description": "Total space available on data1 hard drive ",
-        "fieldConfig": {
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "red",
-                  "value": 0
-                },
-                {
-                  "color": "orange",
-                  "value": 2500000000000
-                },
-                {
-                  "color": "yellow",
-                  "value": 5000000000000
-                },
-                {
-                  "color": "green",
-                  "value": 10000000000000
-                }
-              ]
-            },
-            "unit": "decbytes"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 4,
-          "w": 2,
-          "x": 2,
-          "y": 59
-        },
-        "id": 13,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "percentChangeColorMode": "standard",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
-        },
-        "pluginVersion": "12.1.0-244117",
-        "targets": [
-          {
-            "disableTextWrap": false,
-            "editorMode": "builder",
-            "expr": "node_filesystem_free_bytes{device=\"/dev/sdd1\"}",
-            "fullMetaSearch": false,
-            "includeNullMetadata": true,
-            "legendFormat": "Free Space",
-            "range": true,
-            "refId": "data1",
-            "useBackend": false
-          }
-        ],
-        "title": "data1",
-        "type": "stat"
-      },
-      {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "deof1yw2v2olcb"
-        },
-        "description": "Total space available on parity0 hard drive (used for data integrity, not storing unique data)",
-        "fieldConfig": {
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "red",
-                  "value": 0
-                },
-                {
-                  "color": "orange",
-                  "value": 2500000000000
-                },
-                {
-                  "color": "yellow",
-                  "value": 5000000000000
-                },
-                {
-                  "color": "green",
-                  "value": 10000000000000
-                }
-              ]
-            },
-            "unit": "decbytes"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 4,
-          "w": 2,
-          "x": 4,
-          "y": 59
-        },
-        "id": 15,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "percentChangeColorMode": "standard",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
-        },
-        "pluginVersion": "12.1.0-244117",
-        "targets": [
-          {
-            "disableTextWrap": false,
-            "editorMode": "builder",
-            "expr": "node_filesystem_free_bytes{device=\"/dev/sdb1\", mountpoint=\"/array/disk/parity0\"}",
-            "fullMetaSearch": false,
-            "includeNullMetadata": true,
-            "legendFormat": "Free Space",
-            "range": true,
-            "refId": "parity0",
-            "useBackend": false
-          }
-        ],
-        "title": "parity0",
-        "type": "stat"
-      },
-      {
         "collapsed": false,
         "gridPos": {
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 63
+          "y": 55
         },
         "id": 29,
         "panels": [],
         "title": "Nimbus (Cloud Server)",
         "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "deof1yw2v2olcb"
+        },
+        "description": "Per-core CPU usage",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 25,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "normal"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": 0
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percentunit"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 14,
+          "x": 0,
+          "y": 56
+        },
+        "id": 33,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "hidden",
+            "placement": "right",
+            "showLegend": false
+          },
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "12.1.0-244117",
+        "targets": [
+          {
+            "disableTextWrap": false,
+            "editorMode": "builder",
+            "expr": "sum by(cpu) (rate(node_cpu_seconds_total{instance=\"prometheus-node.nimbus.ts.sub0.net\", mode!=\"idle\"}[1m]))",
+            "fullMetaSearch": false,
+            "includeNullMetadata": false,
+            "legendFormat": "{{label_name}}",
+            "range": true,
+            "refId": "CPU",
+            "useBackend": false
+          }
+        ],
+        "title": "Per-Core CPU Activity",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "deof1yw2v2olcb"
+        },
+        "description": "RAM Usage",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": 0
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "decbytes"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 14,
+          "x": 0,
+          "y": 63
+        },
+        "id": 34,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "12.1.0-244117",
+        "targets": [
+          {
+            "disableTextWrap": false,
+            "editorMode": "builder",
+            "expr": "node_memory_Active_bytes{instance=\"prometheus-node.nimbus.ts.sub0.net\"}",
+            "fullMetaSearch": false,
+            "includeNullMetadata": true,
+            "legendFormat": "Active RAM",
+            "range": true,
+            "refId": "RAM",
+            "useBackend": false
+          }
+        ],
+        "title": "Memory Utilization",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "deof1yw2v2olcb"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": 0
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "Bps"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 14,
+          "x": 0,
+          "y": 71
+        },
+        "id": 35,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "12.1.0-244117",
+        "targets": [
+          {
+            "disableTextWrap": false,
+            "editorMode": "builder",
+            "expr": "rate(node_network_receive_bytes_total{instance=\"prometheus-node.nimbus.ts.sub0.net\", device=\"enp0s6\"}[$__rate_interval])",
+            "fullMetaSearch": false,
+            "includeNullMetadata": false,
+            "legendFormat": "Receive",
+            "range": true,
+            "refId": "RX",
+            "useBackend": false
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "deof1yw2v2olcb"
+            },
+            "disableTextWrap": false,
+            "editorMode": "builder",
+            "expr": "rate(node_network_transmit_bytes_total{instance=\"prometheus-node.nimbus.ts.sub0.net\", device=\"enp0s6\"}[$__rate_interval])",
+            "fullMetaSearch": false,
+            "hide": false,
+            "includeNullMetadata": false,
+            "legendFormat": "Transmit",
+            "range": true,
+            "refId": "TX",
+            "useBackend": false
+          }
+        ],
+        "title": "Network Activity",
+        "type": "timeseries"
       },
       {
         "datasource": {
@@ -1651,7 +1588,7 @@
           "h": 4,
           "w": 2,
           "x": 0,
-          "y": 64
+          "y": 80
         },
         "id": 23,
         "options": {
