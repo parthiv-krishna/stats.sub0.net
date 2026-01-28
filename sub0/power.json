@@ -2,7 +2,7 @@
   "apiVersion": "dashboard.grafana.app/v1beta1",
   "kind": "Dashboard",
   "metadata": {
-    "name": "infrastructure"
+    "name": "power"
   },
   "spec": {
     "annotations": {
@@ -21,110 +21,12 @@
         }
       ]
     },
-    "description": "Physical and network infrastructure monitoring for sub0.net",
+    "description": "Power consumption and UPS monitoring for sub0.net",
     "editable": true,
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
     "links": [],
     "panels": [
-      {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "deof1yw2v2olcb"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": 0
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "reqps"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 9,
-          "x": 0,
-          "y": 0
-        },
-        "id": 32,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "hideZeros": false,
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "pluginVersion": "12.1.0-244117",
-        "targets": [
-          {
-            "disableTextWrap": false,
-            "editorMode": "builder",
-            "expr": "sum by(host) (rate(caddy_http_requests_total{job=\"caddy\", host=~\"sub0.net|[a-zA-Z0-9]*.sub0.net\"}[1m]))",
-            "fullMetaSearch": false,
-            "includeNullMetadata": true,
-            "legendFormat": "{{host}}",
-            "range": true,
-            "refId": "Requests",
-            "useBackend": false
-          }
-        ],
-        "title": "Requests From the Public Internet",
-        "type": "timeseries"
-      },
       {
         "datasource": {
           "type": "prometheus",
@@ -197,15 +99,19 @@
         },
         "gridPos": {
           "h": 8,
-          "w": 12,
+          "w": 17,
           "x": 0,
-          "y": 8
+          "y": 0
         },
         "id": 1,
         "options": {
           "legend": {
-            "calcs": [],
-            "displayMode": "list",
+            "calcs": [
+              "mean",
+              "lastNotNull",
+              "max"
+            ],
+            "displayMode": "table",
             "placement": "bottom",
             "showLegend": true
           },
@@ -309,9 +215,9 @@
         },
         "gridPos": {
           "h": 8,
-          "w": 5,
-          "x": 12,
-          "y": 18
+          "w": 7,
+          "x": 17,
+          "y": 0
         },
         "id": 2,
         "options": {
@@ -343,7 +249,7 @@
             "useBackend": false
           }
         ],
-        "title": "System Power",
+        "title": "Current Power Draw",
         "type": "gauge"
       },
       {
@@ -418,9 +324,9 @@
         },
         "gridPos": {
           "h": 8,
-          "w": 8,
+          "w": 12,
           "x": 0,
-          "y": 26
+          "y": 8
         },
         "id": 3,
         "options": {
@@ -509,11 +415,11 @@
         },
         "gridPos": {
           "h": 8,
-          "w": 4,
-          "x": 8,
-          "y": 34
+          "w": 6,
+          "x": 12,
+          "y": 8
         },
-        "id": 5,
+        "id": 4,
         "options": {
           "minVizHeight": 75,
           "minVizWidth": 75,
@@ -585,14 +491,14 @@
         },
         "gridPos": {
           "h": 8,
-          "w": 5,
-          "x": 12,
-          "y": 42
+          "w": 6,
+          "x": 18,
+          "y": 8
         },
-        "id": 4,
+        "id": 5,
         "options": {
           "colorMode": "value",
-          "graphMode": "none",
+          "graphMode": "area",
           "justifyMode": "auto",
           "orientation": "auto",
           "percentChangeColorMode": "standard",
@@ -628,9 +534,8 @@
     "preload": false,
     "schemaVersion": 41,
     "tags": [
-      "infrastructure",
       "power",
-      "network"
+      "ups"
     ],
     "templating": {
       "list": []
@@ -641,6 +546,6 @@
     },
     "timepicker": {},
     "timezone": "browser",
-    "title": "Infrastructure"
+    "title": "Power"
   }
 }
