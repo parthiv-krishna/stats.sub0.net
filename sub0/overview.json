@@ -413,7 +413,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "builder",
-            "expr": "sum(rate(caddy_http_requests_total{job=\"caddy\", host=~\"sub0.net|[a-zA-Z0-9]*.sub0.net\"}[1m]))",
+            "expr": "sum(rate(caddy_http_requests_total{job=\"caddy\", host=~\".*\\\\.sub0\\\\.net|sub0\\\\.net\"}[1m]))",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "legendFormat": "__auto",
