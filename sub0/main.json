@@ -126,7 +126,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "builder",
-            "expr": "sum by(host) (rate(caddy_http_requests_total{host=~\"sub0.net|[a-zA-Z0-9]*.sub0.net\"}[1m]))",
+            "expr": "sum by(host) (rate(caddy_http_requests_total{job=\"caddy\", host=~\"sub0.net|[a-zA-Z0-9]*.sub0.net\"}[1m]))",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "legendFormat": "{{host}}",
@@ -136,104 +136,6 @@
           }
         ],
         "title": "Requests From the Public Internet",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "deof1yw2v2olcb"
-        },
-        "description": "Auto-banned IP addresses (e.g. port scanning, malicious crawling, suspicious probing)",
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 25,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "normal"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": 0
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 8,
-          "x": 9,
-          "y": 1
-        },
-        "id": 8,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "hidden",
-            "placement": "right",
-            "showLegend": false
-          },
-          "tooltip": {
-            "hideZeros": false,
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "pluginVersion": "12.1.0-244117",
-        "targets": [
-          {
-            "disableTextWrap": false,
-            "editorMode": "builder",
-            "expr": "cs_active_decisions{origin=\"crowdsec\"}",
-            "fullMetaSearch": false,
-            "includeNullMetadata": true,
-            "legendFormat": "{{reason}}",
-            "range": true,
-            "refId": "Decisions",
-            "useBackend": false
-          }
-        ],
-        "title": "Crowdsec Active Decisions",
         "type": "timeseries"
       },
       {
@@ -363,7 +265,7 @@
             },
             "disableTextWrap": false,
             "editorMode": "builder",
-            "expr": "avg_over_time(network_ups_tools_ups_realpower[5m])",
+            "expr": "avg_over_time(network_ups_tools_ups_realpower{job=\"nut\"}[5m])",
             "fullMetaSearch": false,
             "hide": false,
             "includeNullMetadata": true,
@@ -380,7 +282,7 @@
             },
             "disableTextWrap": false,
             "editorMode": "builder",
-            "expr": "avg_over_time(network_ups_tools_ups_realpower[24h])",
+            "expr": "avg_over_time(network_ups_tools_ups_realpower{job=\"nut\"}[24h])",
             "fullMetaSearch": false,
             "hide": false,
             "includeNullMetadata": true,
@@ -580,7 +482,7 @@
             },
             "disableTextWrap": false,
             "editorMode": "builder",
-            "expr": "network_ups_tools_output_voltage",
+            "expr": "network_ups_tools_output_voltage{job=\"nut\"}",
             "fullMetaSearch": false,
             "hide": false,
             "includeNullMetadata": true,
