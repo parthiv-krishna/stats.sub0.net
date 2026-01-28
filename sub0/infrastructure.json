@@ -28,19 +28,6 @@
     "links": [],
     "panels": [
       {
-        "collapsed": false,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 0
-        },
-        "id": 7,
-        "panels": [],
-        "title": "Public Proxy",
-        "type": "row"
-      },
-      {
         "datasource": {
           "type": "prometheus",
           "uid": "deof1yw2v2olcb"
@@ -105,7 +92,7 @@
           "h": 8,
           "w": 9,
           "x": 0,
-          "y": 1
+          "y": 0
         },
         "id": 32,
         "options": {
@@ -137,19 +124,6 @@
         ],
         "title": "Requests From the Public Internet",
         "type": "timeseries"
-      },
-      {
-        "collapsed": false,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 9
-        },
-        "id": 6,
-        "panels": [],
-        "title": "Power",
-        "type": "row"
       },
       {
         "datasource": {
@@ -225,7 +199,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 10
+          "y": 8
         },
         "id": 1,
         "options": {

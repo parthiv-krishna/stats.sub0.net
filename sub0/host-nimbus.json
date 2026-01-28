@@ -28,19 +28,6 @@
     "links": [],
     "panels": [
       {
-        "collapsed": false,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 0
-        },
-        "id": 29,
-        "panels": [],
-        "title": "Nimbus (Cloud Server)",
-        "type": "row"
-      },
-      {
         "datasource": {
           "type": "prometheus",
           "uid": "deof1yw2v2olcb"
@@ -106,7 +93,7 @@
           "h": 7,
           "w": 14,
           "x": 0,
-          "y": 1
+          "y": 0
         },
         "id": 33,
         "options": {

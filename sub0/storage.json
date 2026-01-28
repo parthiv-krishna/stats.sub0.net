@@ -28,19 +28,6 @@
     "links": [],
     "panels": [
       {
-        "collapsed": false,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 0
-        },
-        "id": 9,
-        "panels": [],
-        "title": "ZFS Storage",
-        "type": "row"
-      },
-      {
         "datasource": {
           "type": "prometheus",
           "uid": "deof1yw2v2olcb"
@@ -98,7 +85,7 @@
           "h": 4,
           "w": 3,
           "x": 0,
-          "y": 1
+          "y": 0
         },
         "id": 36,
         "options": {
@@ -218,191 +205,6 @@
           "type": "prometheus",
           "uid": "deof1yw2v2olcb"
         },
-        "description": "ZFS ARC cache hit rate (higher is better)",
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 1,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "red",
-                  "value": 0
-                },
-                {
-                  "color": "orange",
-                  "value": 0.5
-                },
-                {
-                  "color": "yellow",
-                  "value": 0.7
-                },
-                {
-                  "color": "green",
-                  "value": 0.85
-                }
-              ]
-            },
-            "unit": "percentunit"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 6,
-          "x": 9,
-          "y": 13
-        },
-        "id": 38,
-        "options": {
-          "minVizHeight": 75,
-          "minVizWidth": 75,
-          "orientation": "auto",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showThresholdLabels": false,
-          "showThresholdMarkers": true,
-          "sizing": "auto"
-        },
-        "pluginVersion": "12.1.0-244117",
-        "targets": [
-          {
-            "disableTextWrap": false,
-            "editorMode": "code",
-            "expr": "rate(zfs_arc_hits{job=\"zfs\"}[5m]) / (rate(zfs_arc_hits{job=\"zfs\"}[5m]) + rate(zfs_arc_misses{job=\"zfs\"}[5m]))",
-            "fullMetaSearch": false,
-            "includeNullMetadata": true,
-            "legendFormat": "__auto",
-            "range": true,
-            "refId": "HitRate",
-            "useBackend": false
-          }
-        ],
-        "title": "ARC Cache Hit Rate",
-        "type": "gauge"
-      },
-      {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "deof1yw2v2olcb"
-        },
-        "description": "ARC cache size vs maximum",
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 10,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": 0
-                }
-              ]
-            },
-            "unit": "decbytes"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 9,
-          "x": 15,
-          "y": 21
-        },
-        "id": 39,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "hideZeros": false,
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "pluginVersion": "12.1.0-244117",
-        "targets": [
-          {
-            "disableTextWrap": false,
-            "editorMode": "builder",
-            "expr": "zfs_arc_size{job=\"zfs\"}",
-            "fullMetaSearch": false,
-            "includeNullMetadata": true,
-            "legendFormat": "Current Size",
-            "range": true,
-            "refId": "Size",
-            "useBackend": false
-          },
-          {
-            "disableTextWrap": false,
-            "editorMode": "builder",
-            "expr": "zfs_arc_max{job=\"zfs\"}",
-            "fullMetaSearch": false,
-            "hide": false,
-            "includeNullMetadata": true,
-            "legendFormat": "Maximum Size",
-            "range": true,
-            "refId": "Max",
-            "useBackend": false
-          }
-        ],
-        "title": "ARC Memory Usage",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "deof1yw2v2olcb"
-        },
         "description": "Free space available in ZFS pool",
         "fieldConfig": {
           "defaults": {
@@ -436,7 +238,7 @@
           "h": 4,
           "w": 3,
           "x": 0,
-          "y": 29
+          "y": 13
         },
         "id": 40,
         "options": {
@@ -535,7 +337,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 33
+          "y": 17
         },
         "id": 41,
         "options": {
@@ -585,7 +387,85 @@
           "type": "prometheus",
           "uid": "deof1yw2v2olcb"
         },
-        "description": "ARC cache hit rate over time",
+        "description": "ZFS ARC cache hit rate (percentage of reads served from cache)",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "max": 1,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "red",
+                  "value": 0
+                },
+                {
+                  "color": "orange",
+                  "value": 0.7
+                },
+                {
+                  "color": "yellow",
+                  "value": 0.85
+                },
+                {
+                  "color": "green",
+                  "value": 0.95
+                }
+              ]
+            },
+            "unit": "percentunit"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 0,
+          "y": 17
+        },
+        "id": 43,
+        "options": {
+          "minVizHeight": 75,
+          "minVizWidth": 75,
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true,
+          "sizing": "auto"
+        },
+        "pluginVersion": "12.1.0-244117",
+        "targets": [
+          {
+            "disableTextWrap": false,
+            "editorMode": "code",
+            "expr": "rate(node_zfs_arc_hits{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}[5m]) / (rate(node_zfs_arc_hits{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}[5m]) + rate(node_zfs_arc_misses{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}[5m]))",
+            "fullMetaSearch": false,
+            "includeNullMetadata": true,
+            "legendFormat": "Hit Rate",
+            "range": true,
+            "refId": "HitRate",
+            "useBackend": false
+          }
+        ],
+        "title": "ARC Cache Hit Rate",
+        "type": "gauge"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "deof1yw2v2olcb"
+        },
+        "description": "ZFS ARC memory usage vs maximum configured size",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -608,8 +488,118 @@
                 "viz": false
               },
               "insertNulls": false,
-              "lineInterpolation": "smooth",
+              "lineInterpolation": "linear",
               "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": 0
+                }
+              ]
+            },
+            "unit": "decbytes"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 9,
+          "x": 6,
+          "y": 17
+        },
+        "id": 44,
+        "options": {
+          "legend": {
+            "calcs": [
+              "lastNotNull",
+              "max"
+            ],
+            "displayMode": "table",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "multi",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "12.1.0-244117",
+        "targets": [
+          {
+            "disableTextWrap": false,
+            "editorMode": "code",
+            "expr": "node_zfs_arc_size{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}",
+            "fullMetaSearch": false,
+            "includeNullMetadata": true,
+            "legendFormat": "Current ARC Size",
+            "range": true,
+            "refId": "Current",
+            "useBackend": false
+          },
+          {
+            "disableTextWrap": false,
+            "editorMode": "code",
+            "expr": "node_zfs_arc_c_max{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}",
+            "fullMetaSearch": false,
+            "hide": false,
+            "includeNullMetadata": true,
+            "legendFormat": "Maximum ARC Size",
+            "range": true,
+            "refId": "Max",
+            "useBackend": false
+          }
+        ],
+        "title": "ARC Memory Usage",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "deof1yw2v2olcb"
+        },
+        "description": "ZFS ARC cache hit rate over time",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 20,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "smooth",
+              "lineWidth": 2,
               "pointSize": 5,
               "scaleDistribution": {
                 "type": "linear"
@@ -642,15 +632,19 @@
         },
         "gridPos": {
           "h": 8,
-          "w": 12,
-          "x": 12,
-          "y": 41
+          "w": 9,
+          "x": 15,
+          "y": 17
         },
-        "id": 42,
+        "id": 45,
         "options": {
           "legend": {
-            "calcs": [],
-            "displayMode": "list",
+            "calcs": [
+              "mean",
+              "lastNotNull",
+              "min"
+            ],
+            "displayMode": "table",
             "placement": "bottom",
             "showLegend": true
           },
@@ -665,10 +659,10 @@
           {
             "disableTextWrap": false,
             "editorMode": "code",
-            "expr": "rate(zfs_arc_hits{job=\"zfs\"}[5m]) / (rate(zfs_arc_hits{job=\"zfs\"}[5m]) + rate(zfs_arc_misses{job=\"zfs\"}[5m]))",
+            "expr": "rate(node_zfs_arc_hits{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}[5m]) / (rate(node_zfs_arc_hits{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}[5m]) + rate(node_zfs_arc_misses{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}[5m]))",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
-            "legendFormat": "Hit Rate",
+            "legendFormat": "Cache Hit Rate",
             "range": true,
             "refId": "HitRate",
             "useBackend": false
