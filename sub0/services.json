@@ -88,7 +88,7 @@
               "uid": "deof1yw2v2olcb"
             },
             "editorMode": "code",
-            "expr": "count by(state) (systemd_unit_state{job=\"systemd\", name=~\".+\\\\.service\"})",
+            "expr": "sum by(state) (systemd_unit_state{job=\"systemd\", name=~\".+\\\\.service\"})",
             "legendFormat": "{{state}}",
             "range": true,
             "refId": "A"
