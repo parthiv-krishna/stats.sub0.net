@@ -193,7 +193,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "code",
-            "expr": "smartctl_device_smart_healthy{job=\"smartmon\"}",
+            "expr": "smartctl_device_smart_status{job=\"smartmon\"}",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "legendFormat": "{{device}}",
