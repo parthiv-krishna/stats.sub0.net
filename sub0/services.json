@@ -586,7 +586,7 @@
           "type": "prometheus",
           "uid": "deof1yw2v2olcb"
         },
-        "description": "Active Jellyfin streaming sessions",
+        "description": "Current active HTTP requests to Jellyfin",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -602,11 +602,11 @@
                 },
                 {
                   "color": "yellow",
-                  "value": 3
+                  "value": 10
                 },
                 {
                   "color": "orange",
-                  "value": 5
+                  "value": 50
                 }
               ]
             },
@@ -646,13 +646,13 @@
               "uid": "deof1yw2v2olcb"
             },
             "editorMode": "code",
-            "expr": "jellyfin_playback_active_streams{job=\"jellyfin\"}",
+            "expr": "microsoft_aspnetcore_hosting_current_requests{job=\"jellyfin\"}",
             "legendFormat": "__auto",
             "range": true,
             "refId": "A"
           }
         ],
-        "title": "Active Jellyfin Streams",
+        "title": "Active Jellyfin Requests",
         "type": "stat"
       },
       {
@@ -660,7 +660,7 @@
           "type": "prometheus",
           "uid": "deof1yw2v2olcb"
         },
-        "description": "Jellyfin streaming sessions over time",
+        "description": "Jellyfin request rate over time",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -742,13 +742,13 @@
               "uid": "deof1yw2v2olcb"
             },
             "editorMode": "code",
-            "expr": "jellyfin_playback_active_streams{job=\"jellyfin\"}",
-            "legendFormat": "Active Streams",
+            "expr": "rate(microsoft_aspnetcore_hosting_total_requests{job=\"jellyfin\"}[5m])",
+            "legendFormat": "Requests/sec",
             "range": true,
             "refId": "A"
           }
         ],
-        "title": "Jellyfin Streaming Activity",
+        "title": "Jellyfin Request Rate",
         "type": "timeseries"
       },
       {
@@ -838,13 +838,13 @@
               "uid": "deof1yw2v2olcb"
             },
             "editorMode": "code",
-            "expr": "rate(http_requests_received_total{job=\"jellyfin\"}[5m])",
-            "legendFormat": "{{code}} - {{method}}",
+            "expr": "sum by(code) (rate(http_request_duration_seconds_count{job=\"jellyfin\"}[5m]))",
+            "legendFormat": "{{code}}",
             "range": true,
             "refId": "A"
           }
         ],
-        "title": "Jellyfin HTTP Requests",
+        "title": "Jellyfin HTTP Requests by Status",
         "type": "timeseries"
       },
       {
