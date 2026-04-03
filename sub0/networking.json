@@ -316,7 +316,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "code",
-            "expr": "rate(node_network_transmit_bytes_total{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\", device!~\"lo|veth.*\"}[5m])",
+            "expr": "rate(node_network_transmit_bytes_total{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\", device!~\"lo|veth.*\"}[5m])",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "legendFormat": "{{device}} TX",
@@ -415,7 +415,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "code",
-            "expr": "rate(node_network_receive_bytes_total{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\", device!~\"lo|veth.*\"}[5m])",
+            "expr": "rate(node_network_receive_bytes_total{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\", device!~\"lo|veth.*\"}[5m])",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "legendFormat": "{{device}} RX",
@@ -514,7 +514,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "code",
-            "expr": "rate(node_network_transmit_bytes_total{job=\"node\", instance=\"prometheus-node-nimbus.sub0.net\", device!~\"lo|veth.*\"}[5m])",
+            "expr": "rate(node_network_transmit_bytes_total{job=\"node\", instance=\"prometheus-node.nimbus.ts.sub0.net\", device!~\"lo|veth.*\"}[5m])",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "legendFormat": "{{device}} TX",
@@ -613,7 +613,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "code",
-            "expr": "rate(node_network_receive_bytes_total{job=\"node\", instance=\"prometheus-node-nimbus.sub0.net\", device!~\"lo|veth.*\"}[5m])",
+            "expr": "rate(node_network_receive_bytes_total{job=\"node\", instance=\"prometheus-node.nimbus.ts.sub0.net\", device!~\"lo|veth.*\"}[5m])",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "legendFormat": "{{device}} RX",

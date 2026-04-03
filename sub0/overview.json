@@ -491,7 +491,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "code",
-            "expr": "avg(rate(node_cpu_seconds_total{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\", mode!=\"idle\"}[5m]))",
+            "expr": "avg(rate(node_cpu_seconds_total{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\", mode!=\"idle\"}[5m]))",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "legendFormat": "__auto",
@@ -569,7 +569,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "code",
-            "expr": "node_memory_Active_bytes{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"} / node_memory_MemTotal_bytes{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}",
+            "expr": "node_memory_Active_bytes{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\"} / node_memory_MemTotal_bytes{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\"}",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "legendFormat": "__auto",
@@ -647,7 +647,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "code",
-            "expr": "avg(rate(node_cpu_seconds_total{job=\"node\", instance=\"prometheus-node-nimbus.sub0.net\", mode!=\"idle\"}[5m]))",
+            "expr": "avg(rate(node_cpu_seconds_total{job=\"node\", instance=\"prometheus-node.nimbus.ts.sub0.net\", mode!=\"idle\"}[5m]))",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "legendFormat": "__auto",
@@ -725,7 +725,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "code",
-            "expr": "node_memory_Active_bytes{job=\"node\", instance=\"prometheus-node-nimbus.sub0.net\"} / node_memory_MemTotal_bytes{job=\"node\", instance=\"prometheus-node-nimbus.sub0.net\"}",
+            "expr": "node_memory_Active_bytes{job=\"node\", instance=\"prometheus-node.nimbus.ts.sub0.net\"} / node_memory_MemTotal_bytes{job=\"node\", instance=\"prometheus-node.nimbus.ts.sub0.net\"}",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "legendFormat": "__auto",

@@ -794,7 +794,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "code",
-            "expr": "rate(node_zfs_arc_hits{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}[5m]) / (rate(node_zfs_arc_hits{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}[5m]) + rate(node_zfs_arc_misses{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}[5m]))",
+            "expr": "rate(node_zfs_arc_hits{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\"}[5m]) / (rate(node_zfs_arc_hits{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\"}[5m]) + rate(node_zfs_arc_misses{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\"}[5m]))",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "legendFormat": "Hit Rate",
@@ -892,7 +892,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "code",
-            "expr": "node_zfs_arc_size{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}",
+            "expr": "node_zfs_arc_size{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\"}",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "legendFormat": "Current ARC Size",
@@ -903,7 +903,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "code",
-            "expr": "node_zfs_arc_c_max{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}",
+            "expr": "node_zfs_arc_c_max{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\"}",
             "fullMetaSearch": false,
             "hide": false,
             "includeNullMetadata": true,
@@ -1005,7 +1005,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "code",
-            "expr": "rate(node_zfs_arc_hits{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}[5m]) / (rate(node_zfs_arc_hits{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}[5m]) + rate(node_zfs_arc_misses{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}[5m]))",
+            "expr": "rate(node_zfs_arc_hits{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\"}[5m]) / (rate(node_zfs_arc_hits{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\"}[5m]) + rate(node_zfs_arc_misses{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\"}[5m]))",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "legendFormat": "Cache Hit Rate",

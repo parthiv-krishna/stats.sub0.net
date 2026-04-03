@@ -114,7 +114,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "builder",
-            "expr": "sum by(cpu) (rate(node_cpu_seconds_total{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\", mode!=\"idle\"}[1m]))",
+            "expr": "sum by(cpu) (rate(node_cpu_seconds_total{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\", mode!=\"idle\"}[1m]))",
             "fullMetaSearch": false,
             "includeNullMetadata": false,
             "legendFormat": "{{label_name}}",
@@ -213,7 +213,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "builder",
-            "expr": "node_memory_Active_bytes{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\"}",
+            "expr": "node_memory_Active_bytes{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\"}",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "legendFormat": "Active RAM",
@@ -311,7 +311,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "builder",
-            "expr": "rate(node_network_receive_bytes_total{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\", device=\"enp2s0\"}[$__rate_interval])",
+            "expr": "rate(node_network_receive_bytes_total{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\", device=\"enp2s0\"}[$__rate_interval])",
             "fullMetaSearch": false,
             "includeNullMetadata": false,
             "legendFormat": "Receive",
@@ -326,7 +326,7 @@
             },
             "disableTextWrap": false,
             "editorMode": "builder",
-            "expr": "rate(node_network_transmit_bytes_total{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\", device=\"enp2s0\"}[$__rate_interval])",
+            "expr": "rate(node_network_transmit_bytes_total{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\", device=\"enp2s0\"}[$__rate_interval])",
             "fullMetaSearch": false,
             "hide": false,
             "includeNullMetadata": false,
@@ -403,7 +403,7 @@
             "disableTextWrap": false,
             "editorMode": "builder",
             "exemplar": false,
-            "expr": "node_filesystem_free_bytes{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\", mountpoint=\"/persist\"}",
+            "expr": "node_filesystem_free_bytes{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\", mountpoint=\"/persist\"}",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "instant": false,
@@ -479,7 +479,7 @@
           {
             "disableTextWrap": false,
             "editorMode": "builder",
-            "expr": "node_filesystem_free_bytes{job=\"node\", instance=\"prometheus-node-midnight.sub0.net\", mountpoint=\"/\"}",
+            "expr": "node_filesystem_free_bytes{job=\"node\", instance=\"prometheus-node.midnight.ts.sub0.net\", mountpoint=\"/\"}",
             "fullMetaSearch": false,
             "includeNullMetadata": true,
             "legendFormat": "__auto",
